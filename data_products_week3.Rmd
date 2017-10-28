@@ -36,7 +36,7 @@ y <- list(
 
 See plot below.
 
-```{r pressure, echo=FALSE}
+```{r}
 
 plot_ly(goldPriceData, x = ~as.Date(date), y = ~price, type = 'scatter', 
         mode = 'lines') %>% layout(xaxis = x, yaxis = y)
