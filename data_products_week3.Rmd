@@ -1,0 +1,44 @@
+---
+title: "Data_Products_Week3"
+author: "M.Gruber"
+date: "28 Oktober 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load the data and prepare for plotting it.
+
+I used the data frokm https://github.com/datasets/gold-prices.
+
+```{r cars}
+library(plotly)
+goldPriceData <- read.csv("data.csv", stringsAsFactors = FALSE)
+f <- list(
+  family = "Courier New, monospace",
+  size = 18,
+  color = "#7f7f7f"
+)
+
+x <- list(
+    title = "Years",
+    titlefont = f
+)
+y <- list(
+    title = "Price (USD)",
+    titlefont = f
+)
+```
+
+## Plotting the data using plotly
+
+See plot below.
+
+```{r pressure, echo=FALSE}
+plot_ly(goldPriceData, x = ~as.Date(date), y = ~price, type = 'scatter', 
+        mode = 'lines') %>% layout(xaxis = x, yaxis = y)
+```
+
+
