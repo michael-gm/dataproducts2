@@ -36,8 +36,7 @@ y <- list(
 
 See plot below.
 
-```{r}
-
+```{r, echo = TRUE}
 plot_ly(goldPriceData, x = ~as.Date(date), y = ~price, type = 'scatter', 
         mode = 'lines') %>% layout(xaxis = x, yaxis = y)
 ```
